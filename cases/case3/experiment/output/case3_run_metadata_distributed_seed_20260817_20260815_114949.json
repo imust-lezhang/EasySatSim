@@ -1,0 +1,102 @@
+{
+  "path_format": "project-relative-posix",
+  "routing_mode": "distributed",
+  "random_seed": 20260817,
+  "output_timestamp": "20260815_114949",
+  "running_time": 200,
+  "failed_satellite_id": 377,
+  "failure_time": 105.0,
+  "centralized_route_refresh_interval": 50.0,
+  "centralized_route_tables": {
+    "storage": "experiment/data/centralized_route_tables.npz",
+    "unique_states": [
+      "normal",
+      "s377_failed"
+    ],
+    "deployment_sequence": [
+      "normal",
+      "normal",
+      "normal",
+      "s377_failed"
+    ],
+    "deployment_times": [
+      0.0,
+      50.0,
+      100.0,
+      150.0
+    ]
+  },
+  "event_log_path": "cases/case3/experiment/output/case3_events_distributed_seed_20260817_20260815_114949.csv",
+  "network_log_path": "cases/case3/experiment/output/easysatsim_result_distributed_seed_20260817_20260815_114949.csv",
+  "constellation": {
+    "orbit_number": 16,
+    "satellites_per_orbit": 25,
+    "total_satellites": 400,
+    "inclination_deg": 53,
+    "height_km": 1150
+  },
+  "users_and_traffic": {
+    "user_number": 200,
+    "pair_count": 100,
+    "traffic_start_time": 5.0,
+    "send_period": 2.0,
+    "packet_size_byte": 1200,
+    "coordinate_model": "seeded_uniform_disks",
+    "coordinate_seed": 20260817,
+    "cluster_radius_deg": 1.0,
+    "group_a_subcenters": [
+      [
+        33.6,
+        -7.4
+      ],
+      [
+        36.0,
+        -3.6
+      ],
+      [
+        38.2,
+        -6.0
+      ],
+      [
+        34.7,
+        -1.6
+      ]
+    ],
+    "group_b_subcenters": [
+      [
+        32.8,
+        111.5
+      ],
+      [
+        35.7,
+        116.8
+      ],
+      [
+        38.5,
+        113.6
+      ],
+      [
+        34.4,
+        120.2
+      ]
+    ],
+    "coordinate_sha256": "881576171e8ed6d540a0d71a5d2c32936ca37809ca9d28d1f4749492508e7043"
+  },
+  "physical_layer": {
+    "PHYSICAL_LAYER_ENABLE": true,
+    "PHYSICAL_LAYER_ENABLE_DOPPLER": true,
+    "PHYSICAL_LAYER_ENABLE_DYNAMIC_RATE": true,
+    "PHYSICAL_LAYER_UPDATE_INTERVAL": 0.5,
+    "MIN_ELEVATION_ANGLE_DEG": 40.0,
+    "ISL_TX_POWER_DBM": 37.0,
+    "ISL_TX_ANTENNA_GAIN_DBI": 38.0,
+    "ISL_RX_ANTENNA_GAIN_DBI": 38.0,
+    "ISL_MIN_SNR_DB": -5.0,
+    "ISL_MAX_DISTANCE_M": 6000000.0,
+    "SGL_TX_POWER_DBM": 42.0,
+    "SGL_TX_ANTENNA_GAIN_DBI": 34.0,
+    "SGL_RX_ANTENNA_GAIN_DBI": 35.0,
+    "SGL_MIN_SNR_DB": -5.0,
+    "SGL_MAX_DISTANCE_M": 3000000.0
+  }
+}

@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: >-
+  If you use EasySatSim in your research, please cite this software. The related paper is currently under review.
+  The citation information will be updated after the paper is formally published.
+title: EasySatSim
+type: software
+authors:
+  - name: EasySatSim Contributors
+abstract: >-
+  EasySatSim is an extensible experimental framework for LEO satellite network research, designed to enable researchers to build customizable satellite network environments on personal computing devices.
+  The framework organizes simulation logic around entities, behaviors, and the protocol stack, integrating large-scale constellation state evolution with packet-level communication processes in a unified experimental environment.
+  This design enables researchers to construct and extend satellite network experiments according to specific research needs.
+license: MIT
+keywords:
+  - satellite networks
+  - network simulation
+  - low Earth orbit
+  - protocol stack
+  - routing

@@ -1,0 +1,5 @@
+# Core simulator plus result-processing and plotting dependencies.
+-r requirements.txt
+
+matplotlib==3.10.8
+pandas==3.0.3

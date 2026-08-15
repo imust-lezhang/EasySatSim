@@ -1,0 +1,5 @@
+# Full Case 2 pipeline: simulation, CIFAR-10 learning, evaluation, and plotting.
+-r ../../requirements-plotting.txt
+
+torch==2.13.0
+torchvision==0.28.0

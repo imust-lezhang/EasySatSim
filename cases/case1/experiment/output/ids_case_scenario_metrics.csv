@@ -1,0 +1,4 @@
+ids,case_detected,case_malicious_total,detection_rate_case_scenario,case_false_positive,case_benign_total,false_positive_rate_case_scenario,true_positive,false_negative,false_positive,true_negative,total_events,event_file_count
+DL-IDS,863,944,0.9141949152542372,19,689,0.027576197387518143,863,81,19,670,1633,1
+HR-IDS,794,1000,0.794,5,819,0.006105006105006105,794,206,5,814,1819,1
+S-IDS,425,1014,0.41913214990138065,0,764,0.0,425,589,0,764,1778,1

@@ -1,0 +1,4 @@
+# Full Case 1 pipeline: simulation, evaluation, plotting, and DL IDS.
+-r ../../requirements-plotting.txt
+
+tensorflow==2.21.0

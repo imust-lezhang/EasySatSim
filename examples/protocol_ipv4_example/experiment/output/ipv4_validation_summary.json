@@ -1,0 +1,522 @@
+{
+  "status": "PASS",
+  "forwarding_event_definition": "One event for each non-destination satellite that executes IPv4 forwarding; destination-user delivery is not counted.",
+  "artifacts": {
+    "delivery_result": "examples/protocol_ipv4_example/experiment/output/step8_delivery.json",
+    "hop_trace": "examples/protocol_ipv4_example/experiment/output/ipv4_hop_trace.csv",
+    "source_pcap": "examples/protocol_ipv4_example/experiment/output/source_ipv4_udp.pcap",
+    "destination_pcap": "examples/protocol_ipv4_example/experiment/output/destination_ipv4_udp.pcap"
+  },
+  "assertion_count": 24,
+  "passed_assertion_count": 24,
+  "failed_assertion_count": 0,
+  "failed_assertions": [],
+  "assertions": {
+    "delivery_result_readable": {
+      "expected": "existing readable JSON object",
+      "observed": "read examples/protocol_ipv4_example/experiment/output/step8_delivery.json",
+      "status": "PASS"
+    },
+    "hop_trace_readable": {
+      "expected": "existing non-empty CSV trace with the documented schema",
+      "observed": {
+        "path": "examples/protocol_ipv4_example/experiment/output/ipv4_hop_trace.csv",
+        "event_rows": 9,
+        "fieldnames": [
+          "simulation_time",
+          "entity_id",
+          "entity_type",
+          "src_ip",
+          "dst_ip",
+          "protocol",
+          "ttl_before",
+          "ttl_after",
+          "checksum_before",
+          "checksum_after",
+          "next_hop_ip",
+          "next_hop_entity",
+          "action",
+          "message_id"
+        ]
+      },
+      "status": "PASS"
+    },
+    "source_pcap_readable": {
+      "expected": "one readable DLT_RAW(12) IPv4 packet",
+      "observed": {
+        "path": "examples/protocol_ipv4_example/experiment/output/source_ipv4_udp.pcap",
+        "packet_count": 1,
+        "linktype": 12
+      },
+      "status": "PASS"
+    },
+    "destination_pcap_readable": {
+      "expected": "one readable DLT_RAW(12) IPv4 packet",
+      "observed": {
+        "path": "examples/protocol_ipv4_example/experiment/output/destination_ipv4_udp.pcap",
+        "packet_count": 1,
+        "linktype": 12
+      },
+      "status": "PASS"
+    },
+    "delivery_identity": {
+      "expected": {
+        "status": "DELIVERED",
+        "message_id": "ipv4-step8-0001",
+        "source_user_id": 0,
+        "destination_user_id": 1,
+        "source_access_satellite_id": 0,
+        "destination_access_satellite_id": 40
+      },
+      "observed": {
+        "status": "DELIVERED",
+        "message_id": "ipv4-step8-0001",
+        "source_user_id": 0,
+        "destination_user_id": 1,
+        "source_access_satellite_id": 0,
+        "destination_access_satellite_id": 40
+      },
+      "status": "PASS"
+    },
+    "ipv4_version": {
+      "expected": [
+        4,
+        4
+      ],
+      "observed": [
+        4,
+        4
+      ],
+      "status": "PASS"
+    },
+    "ipv4_ihl": {
+      "expected": "source and destination IHL >= 5",
+      "observed": [
+        5,
+        5
+      ],
+      "status": "PASS"
+    },
+    "ipv4_total_length": {
+      "expected": [
+        61,
+        61
+      ],
+      "observed": [
+        61,
+        61
+      ],
+      "status": "PASS"
+    },
+    "ipv4_protocol": {
+      "expected": [
+        17,
+        17
+      ],
+      "observed": [
+        17,
+        17
+      ],
+      "status": "PASS"
+    },
+    "udp_ports": {
+      "expected": {
+        "source_pcap": [
+          18080,
+          18080
+        ],
+        "destination_pcap": [
+          18080,
+          18080
+        ],
+        "delivery_result": [
+          18080,
+          18080
+        ]
+      },
+      "observed": {
+        "source_pcap": [
+          18080,
+          18080
+        ],
+        "destination_pcap": [
+          18080,
+          18080
+        ],
+        "delivery_result": [
+          18080,
+          18080
+        ]
+      },
+      "status": "PASS"
+    },
+    "payload_end_to_end": {
+      "expected": "EASYSATSIM_STANDARD_IPV4_UDP_TEST",
+      "observed": {
+        "source_pcap": "EASYSATSIM_STANDARD_IPV4_UDP_TEST",
+        "destination_pcap": "EASYSATSIM_STANDARD_IPV4_UDP_TEST",
+        "delivery_result": "EASYSATSIM_STANDARD_IPV4_UDP_TEST"
+      },
+      "status": "PASS"
+    },
+    "udp_datagram_preserved": {
+      "expected": "identical serialized UDP bytes at source and destination",
+      "observed": {
+        "source_length": 41,
+        "destination_length": 41
+      },
+      "status": "PASS"
+    },
+    "source_ip_unchanged": {
+      "expected": "153.103.217.229",
+      "observed": {
+        "source_pcap": "153.103.217.229",
+        "destination_pcap": "153.103.217.229",
+        "delivery_result": "153.103.217.229"
+      },
+      "status": "PASS"
+    },
+    "destination_ip_unchanged": {
+      "expected": "51.222.144.79",
+      "observed": {
+        "source_pcap": "51.222.144.79",
+        "destination_pcap": "51.222.144.79",
+        "delivery_result": "51.222.144.79"
+      },
+      "status": "PASS"
+    },
+    "satellite_forwarding_event_count": {
+      "expected": ">= 2 satellite forwarding events",
+      "observed": {
+        "count": 8,
+        "satellite_path": [
+          0,
+          1,
+          13,
+          14,
+          26,
+          27,
+          39,
+          40
+        ],
+        "entity_types": [
+          "satellite",
+          "satellite",
+          "satellite",
+          "satellite",
+          "satellite",
+          "satellite",
+          "satellite",
+          "satellite"
+        ]
+      },
+      "status": "PASS"
+    },
+    "destination_delivery_event_count": {
+      "expected": "exactly 1 user delivery event",
+      "observed": {
+        "count": 1,
+        "entities": [
+          "user:1"
+        ]
+      },
+      "status": "PASS"
+    },
+    "next_hop_continuity": {
+      "expected": "each next_hop_entity equals the following processing entity",
+      "observed": [
+        {
+          "from": "satellite:0",
+          "recorded_next": "satellite:1",
+          "expected_next": "satellite:1",
+          "status": "PASS"
+        },
+        {
+          "from": "satellite:1",
+          "recorded_next": "satellite:13",
+          "expected_next": "satellite:13",
+          "status": "PASS"
+        },
+        {
+          "from": "satellite:13",
+          "recorded_next": "satellite:14",
+          "expected_next": "satellite:14",
+          "status": "PASS"
+        },
+        {
+          "from": "satellite:14",
+          "recorded_next": "satellite:26",
+          "expected_next": "satellite:26",
+          "status": "PASS"
+        },
+        {
+          "from": "satellite:26",
+          "recorded_next": "satellite:27",
+          "expected_next": "satellite:27",
+          "status": "PASS"
+        },
+        {
+          "from": "satellite:27",
+          "recorded_next": "satellite:39",
+          "expected_next": "satellite:39",
+          "status": "PASS"
+        },
+        {
+          "from": "satellite:39",
+          "recorded_next": "satellite:40",
+          "expected_next": "satellite:40",
+          "status": "PASS"
+        },
+        {
+          "from": "satellite:40",
+          "recorded_next": "user:1",
+          "expected_next": "user:1",
+          "status": "PASS"
+        }
+      ],
+      "status": "PASS"
+    },
+    "satellite_path_endpoints": {
+      "expected": [
+        0,
+        40
+      ],
+      "observed": [
+        0,
+        40
+      ],
+      "status": "PASS"
+    },
+    "trace_event_semantics": {
+      "expected": "satellite forward rows followed by one user delivery row, all using protocol 17 in nondecreasing simulation-time order",
+      "observed": [
+        {
+          "entity": "satellite:0",
+          "protocol": "17",
+          "simulation_time": "4.2"
+        },
+        {
+          "entity": "satellite:1",
+          "protocol": "17",
+          "simulation_time": "4.2"
+        },
+        {
+          "entity": "satellite:13",
+          "protocol": "17",
+          "simulation_time": "4.2"
+        },
+        {
+          "entity": "satellite:14",
+          "protocol": "17",
+          "simulation_time": "4.2"
+        },
+        {
+          "entity": "satellite:26",
+          "protocol": "17",
+          "simulation_time": "4.2"
+        },
+        {
+          "entity": "satellite:27",
+          "protocol": "17",
+          "simulation_time": "4.2"
+        },
+        {
+          "entity": "satellite:39",
+          "protocol": "17",
+          "simulation_time": "4.2"
+        },
+        {
+          "entity": "satellite:40",
+          "protocol": "17",
+          "simulation_time": "4.2"
+        },
+        {
+          "entity": "user:1",
+          "protocol": "17",
+          "simulation_time": "4.2"
+        }
+      ],
+      "status": "PASS"
+    },
+    "per_hop_ttl_decrement": {
+      "expected": "ttl_after = ttl_before - 1 at every satellite forwarding event",
+      "observed": [
+        {
+          "entity_id": 0,
+          "ttl_before": 64,
+          "ttl_after": 63
+        },
+        {
+          "entity_id": 1,
+          "ttl_before": 63,
+          "ttl_after": 62
+        },
+        {
+          "entity_id": 13,
+          "ttl_before": 62,
+          "ttl_after": 61
+        },
+        {
+          "entity_id": 14,
+          "ttl_before": 61,
+          "ttl_after": 60
+        },
+        {
+          "entity_id": 26,
+          "ttl_before": 60,
+          "ttl_after": 59
+        },
+        {
+          "entity_id": 27,
+          "ttl_before": 59,
+          "ttl_after": 58
+        },
+        {
+          "entity_id": 39,
+          "ttl_before": 58,
+          "ttl_after": 57
+        },
+        {
+          "entity_id": 40,
+          "ttl_before": 57,
+          "ttl_after": 56
+        }
+      ],
+      "status": "PASS"
+    },
+    "destination_does_not_decrement_ttl": {
+      "expected": "delivery ttl_before == ttl_after",
+      "observed": {
+        "ttl_before": 56,
+        "ttl_after": 56
+      },
+      "status": "PASS"
+    },
+    "ttl_matches_forwarding_count": {
+      "expected": "initial_ttl - final_ttl == forwarding_event_count and delivery result final TTL matches destination PCAP",
+      "observed": {
+        "initial_ttl_source_pcap": 64,
+        "final_ttl_destination_pcap": 56,
+        "final_ttl_delivery_result": 56,
+        "forwarding_event_count": 8
+      },
+      "status": "PASS"
+    },
+    "per_hop_ipv4_checksum_recalculation": {
+      "expected": "each recorded checksum equals an independent Scapy recalculation, each IPv4 header checksum verifies, and the rebuilt final packet equals the destination PCAP",
+      "observed": {
+        "hops": [
+          {
+            "entity_id": 0,
+            "ttl_before": 64,
+            "ttl_after": 63,
+            "recorded_checksum_before": "0x23f5",
+            "scapy_expected_checksum_before": "0x23f5",
+            "recorded_checksum_after": "0x24f5",
+            "scapy_recalculated_checksum_after": "0x24f5",
+            "header_checksum_valid_before": true,
+            "header_checksum_valid_after": true,
+            "status": "PASS"
+          },
+          {
+            "entity_id": 1,
+            "ttl_before": 63,
+            "ttl_after": 62,
+            "recorded_checksum_before": "0x24f5",
+            "scapy_expected_checksum_before": "0x24f5",
+            "recorded_checksum_after": "0x25f5",
+            "scapy_recalculated_checksum_after": "0x25f5",
+            "header_checksum_valid_before": true,
+            "header_checksum_valid_after": true,
+            "status": "PASS"
+          },
+          {
+            "entity_id": 13,
+            "ttl_before": 62,
+            "ttl_after": 61,
+            "recorded_checksum_before": "0x25f5",
+            "scapy_expected_checksum_before": "0x25f5",
+            "recorded_checksum_after": "0x26f5",
+            "scapy_recalculated_checksum_after": "0x26f5",
+            "header_checksum_valid_before": true,
+            "header_checksum_valid_after": true,
+            "status": "PASS"
+          },
+          {
+            "entity_id": 14,
+            "ttl_before": 61,
+            "ttl_after": 60,
+            "recorded_checksum_before": "0x26f5",
+            "scapy_expected_checksum_before": "0x26f5",
+            "recorded_checksum_after": "0x27f5",
+            "scapy_recalculated_checksum_after": "0x27f5",
+            "header_checksum_valid_before": true,
+            "header_checksum_valid_after": true,
+            "status": "PASS"
+          },
+          {
+            "entity_id": 26,
+            "ttl_before": 60,
+            "ttl_after": 59,
+            "recorded_checksum_before": "0x27f5",
+            "scapy_expected_checksum_before": "0x27f5",
+            "recorded_checksum_after": "0x28f5",
+            "scapy_recalculated_checksum_after": "0x28f5",
+            "header_checksum_valid_before": true,
+            "header_checksum_valid_after": true,
+            "status": "PASS"
+          },
+          {
+            "entity_id": 27,
+            "ttl_before": 59,
+            "ttl_after": 58,
+            "recorded_checksum_before": "0x28f5",
+            "scapy_expected_checksum_before": "0x28f5",
+            "recorded_checksum_after": "0x29f5",
+            "scapy_recalculated_checksum_after": "0x29f5",
+            "header_checksum_valid_before": true,
+            "header_checksum_valid_after": true,
+            "status": "PASS"
+          },
+          {
+            "entity_id": 39,
+            "ttl_before": 58,
+            "ttl_after": 57,
+            "recorded_checksum_before": "0x29f5",
+            "scapy_expected_checksum_before": "0x29f5",
+            "recorded_checksum_after": "0x2af5",
+            "scapy_recalculated_checksum_after": "0x2af5",
+            "header_checksum_valid_before": true,
+            "header_checksum_valid_after": true,
+            "status": "PASS"
+          },
+          {
+            "entity_id": 40,
+            "ttl_before": 57,
+            "ttl_after": 56,
+            "recorded_checksum_before": "0x2af5",
+            "scapy_expected_checksum_before": "0x2af5",
+            "recorded_checksum_after": "0x2bf5",
+            "scapy_recalculated_checksum_after": "0x2bf5",
+            "header_checksum_valid_before": true,
+            "header_checksum_valid_after": true,
+            "status": "PASS"
+          }
+        ],
+        "rebuilt_final_packet_matches_destination_pcap": true
+      },
+      "status": "PASS"
+    },
+    "pcap_timestamp_mapping": {
+      "expected": "pcap_timestamp = BASE_EPOCH + non-negative simulation_time; destination timestamp >= source timestamp",
+      "observed": {
+        "base_epoch": 1700000000.0,
+        "source_pcap_timestamp": 1700000004.2,
+        "source_simulation_time": 4.200000047683716,
+        "destination_pcap_timestamp": 1700000004.2,
+        "destination_simulation_time": 4.200000047683716
+      },
+      "status": "PASS"
+    }
+  }
+}

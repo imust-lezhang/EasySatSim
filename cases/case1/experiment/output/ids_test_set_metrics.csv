@@ -1,0 +1,4 @@
+ids,tp,fp,tn,fn,accuracy_test_set,detection_rate_test_set,false_positive_rate_test_set,test_malicious_total,test_benign_total
+S-IDS,80,0,40,120,0.5,0.4,0.0,200,40
+HR-IDS,160,0,40,40,0.8333333333333334,0.8,0.0,200,40
+DL-IDS,184,0,40,16,0.9333333333333333,0.92,0.0,200,40

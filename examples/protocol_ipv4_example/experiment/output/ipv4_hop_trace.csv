@@ -1,0 +1,10 @@
+simulation_time,entity_id,entity_type,src_ip,dst_ip,protocol,ttl_before,ttl_after,checksum_before,checksum_after,next_hop_ip,next_hop_entity,action,message_id
+4.2,0,satellite,153.103.217.229,51.222.144.79,17,64,63,0x23f5,0x24f5,146.172.111.129,satellite:1,forward,ipv4-step8-0001
+4.2,1,satellite,153.103.217.229,51.222.144.79,17,63,62,0x24f5,0x25f5,14.119.122.213,satellite:13,forward,ipv4-step8-0001
+4.2,13,satellite,153.103.217.229,51.222.144.79,17,62,61,0x25f5,0x26f5,20.50.243.255,satellite:14,forward,ipv4-step8-0001
+4.2,14,satellite,153.103.217.229,51.222.144.79,17,61,60,0x26f5,0x27f5,110.59.188.95,satellite:26,forward,ipv4-step8-0001
+4.2,26,satellite,153.103.217.229,51.222.144.79,17,60,59,0x27f5,0x28f5,167.185.135.117,satellite:27,forward,ipv4-step8-0001
+4.2,27,satellite,153.103.217.229,51.222.144.79,17,59,58,0x28f5,0x29f5,204.225.57.28,satellite:39,forward,ipv4-step8-0001
+4.2,39,satellite,153.103.217.229,51.222.144.79,17,58,57,0x29f5,0x2af5,46.169.69.12,satellite:40,forward,ipv4-step8-0001
+4.2,40,satellite,153.103.217.229,51.222.144.79,17,57,56,0x2af5,0x2bf5,51.222.144.79,user:1,forward,ipv4-step8-0001
+4.2,1,user,153.103.217.229,51.222.144.79,17,56,56,0x2bf5,0x2bf5,,,deliver,ipv4-step8-0001

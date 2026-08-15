@@ -1,0 +1,7 @@
+# EasySatSim core and the IPv4 integration exercised by the test suite.
+-r ../requirements.txt
+-r ../examples/protocol_ipv4_example/requirements.txt
+
+pytest>=8,<9
+pytest-timeout>=2,<3
+PyYAML>=6,<7

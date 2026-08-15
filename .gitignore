@@ -1,0 +1,47 @@
+# IDE and editor-local state.
+/.idea/
+/.vscode/
+
+# Python bytecode, test caches, coverage, and build artifacts.
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+build/
+dist/
+*.egg-info/
+
+# Local Python environments.
+/.venv/
+/venv/
+/env/
+
+# Main simulator runtime output. Keep only the directory guide.
+/output/*
+!/output/README.md
+
+# Generated test reports, screenshots, and short-run results.
+/tests/artifacts/*
+!/tests/artifacts/.gitkeep
+
+# Case 2 CIFAR-10 download and extraction cache. Keep the Python data-loader,
+# partition modules, and data guide in the same directory.
+/cases/case2/experiment/data/cifar-10-python.tar.gz
+/cases/case2/experiment/data/cifar-10-batches-py/
+
+# Explicit local/pre-release material, including temporary case-result backups.
+**/_DELETE_BEFORE_RELEASE_*
+/EASYSATSIM_GITHUB_RELEASE_AUDIT_REPORT.md
+*.log
+*.tmp
+*.bak
+
+# Operating-system metadata.
+.DS_Store
+Thumbs.db
+desktop.ini

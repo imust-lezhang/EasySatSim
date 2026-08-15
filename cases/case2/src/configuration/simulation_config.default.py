@@ -1,0 +1,232 @@
+import os
+import numpy as np
+
+
+# Case 2 mode
+LEARNING_ARCHITECTURE = os.environ.get("EASYSATSIM_LEARNING_ARCHITECTURE", "cl").lower()
+OUTPUT_PREFIX = os.environ.get("EASYSATSIM_ML_OUTPUT_PREFIX", LEARNING_ARCHITECTURE)
+
+
+# Constellation parameters: Starlink S1
+ORBIT_NUMBER = 72
+SATELLITE_NUMBER_PRE_ORBIT = 22
+ORBIT_INCLINATION = 53
+ORBIT_HEIGHT = 550
+ORBIT_OMEGA = 5
+USER_NUMBER = 1000
+CASE_SIMULATION_END_TIME = 1000
+
+
+# Satellite parameters
+# SATELLITE_CONE_ANGLE = 50
+BUFFER_MAX_BYTE = 1e20
+SATELLITE_ROUTING_UPDATE_TIME = 5
+SATELLITE_NEIGHBOR_UPDATE_TIME = 1
+MAX_NEIGHBOR_UPDATE_TIME = 10
+
+
+# User parameters
+USER_LATITUDE_MIN = -50
+USER_LATITUDE_MAX = 50
+USER_DATA_RATE_MIN = 10
+USER_DATA_RATE_MAX = 15
+DATA_SCALING = 100
+USER_ROUTING_UPDATE_TIME = 9999
+
+
+# Computation parameters
+LINK_TRANSMIT_RATE = 1e7
+SERVICE_RATE = 1e7
+PROCESSING_TIME = 1
+
+
+# Physical-layer approximation parameters
+PHYSICAL_LAYER_ENABLE = True
+PHYSICAL_LAYER_ENABLE_DOPPLER = True
+PHYSICAL_LAYER_ENABLE_DYNAMIC_RATE = True
+PHYSICAL_LAYER_UPDATE_INTERVAL = 0.5
+PHYSICAL_LAYER_USE_CACHE = True
+PHYSICAL_LAYER_DEFAULT_PROCESSING_TIME = PROCESSING_TIME
+
+
+# ISL physical-layer parameters
+ISL_CARRIER_FREQUENCY_HZ = 23e9
+ISL_BANDWIDTH_HZ = 250e6
+ISL_TX_POWER_DBM = 33.0
+ISL_TX_ANTENNA_GAIN_DBI = 35.0
+ISL_RX_ANTENNA_GAIN_DBI = 35.0
+ISL_SYSTEM_LOSS_DB = 3.0
+ISL_ATMOSPHERIC_LOSS_DB = 0.5
+ISL_NOISE_FIGURE_DB = 3.0
+ISL_MIN_SNR_DB = 0.0
+ISL_MAX_DISTANCE_M = 5000000.0
+ISL_DOPPLER_COMPENSATION_HZ = 750000.0
+ISL_RESIDUAL_DOPPLER_LOSS_PER_KHZ_DB = 0.002
+ISL_STATIC_RATE_BPS = LINK_TRANSMIT_RATE
+ISL_MIN_EFFECTIVE_RATE_BPS = 1e5
+ISL_SPECTRAL_EFFICIENCY = 0.65
+ISL_RATE_MAPPING_MODE = "discrete"
+ISL_DROP_LINK_IF_DOPPLER_EXCEEDED = False
+ISL_DISCRETE_RATE_TABLE = (
+    (-5.0, 1e5),
+    (0.0, 1e6),
+    (5.0, 5e6),
+    (10.0, 1e7),
+    (15.0, 5e7),
+    (20.0, 1e8),
+    (25.0, 2e8),
+)
+
+
+# SGL physical-layer parameters
+SGL_CARRIER_FREQUENCY_HZ = 14e9
+SGL_BANDWIDTH_HZ = 100e6
+SGL_TX_POWER_DBM = 40.0
+SGL_TX_ANTENNA_GAIN_DBI = 32.0
+SGL_RX_ANTENNA_GAIN_DBI = 35.0
+SGL_SYSTEM_LOSS_DB = 3.0
+SGL_ATMOSPHERIC_LOSS_DB = 2.0
+SGL_NOISE_FIGURE_DB = 5.0
+SGL_MIN_SNR_DB = -2.0
+SGL_MAX_DISTANCE_M = 2500000.0
+SGL_DOPPLER_COMPENSATION_HZ = 500000.0
+SGL_RESIDUAL_DOPPLER_LOSS_PER_KHZ_DB = 0.003
+SGL_STATIC_RATE_BPS = LINK_TRANSMIT_RATE
+SGL_MIN_EFFECTIVE_RATE_BPS = 1e5
+SGL_SPECTRAL_EFFICIENCY = 0.60
+SGL_RATE_MAPPING_MODE = "discrete"
+SGL_DROP_LINK_IF_DOPPLER_EXCEEDED = False
+SGL_DISCRETE_RATE_TABLE = (
+    (-5.0, 1e5),
+    (0.0, 1e6),
+    (5.0, 5e6),
+    (10.0, 1e7),
+    (15.0, 5e7),
+    (20.0, 1e8),
+)
+
+
+# Time parameters
+NETWORK_RUNNING_STEP_SECOND = 0.05
+
+
+# Case 2 common parameters
+CASE_RANDOM_SEED = 20260805
+SERVER_IP_ADDRESS = "10.10.10.10"
+SERVER_LATITUDE = 52.520008
+SERVER_LONGITUDE = 13.404954
+CASE2_APPLICATION_PORT = 2024
+# torchvision stores its generated CIFAR-10 cache here. The archive and
+# extracted directory are excluded from Git; see experiment/data/README.md.
+CIFAR10_DATA_ROOT = "../cases/case2/experiment/data"
+CIFAR10_DOWNLOAD = True
+CIFAR10_TRAIN_SPLIT = 45000
+CIFAR10_TEST_SPLIT = 5000
+ML_BATCH_SIZE = 64
+ML_LEARNING_RATE = 0.001
+ML_LOCAL_EPOCHS = 1
+ML_DATA_SIZE_SCALING = 1.0
+CASE2_RESET_EVENT_LOGS = True
+
+
+# CL parameters
+CL_SAMPLE_SEND_INTERVAL = 0.1
+CL_SAMPLES_PER_MESSAGE = 1
+CL_SAMPLE_BYTE_MODE = "float32_tensor"
+CL_TRAIN_TRIGGER_SAMPLE_COUNT = 2000
+CL_SERVER_TRAIN_EPOCHS = 2
+CL_CLEAR_DEFAULT_USER_TRAFFIC = True
+CL_COMMUNICATION_LOG_INTERVAL = 1000
+
+
+# FL parameters
+FL_LOCAL_TRAIN_INTERVAL = 10
+FL_MODEL_UPLOAD_INTERVAL = 3
+FL_SERVER_ROUND_INTERVAL = 1
+FL_CLIENTS_PER_ROUND = 5
+FL_UPDATES_PER_ROUND = FL_CLIENTS_PER_ROUND
+FL_LOCAL_SAMPLE_COUNT = 3000
+FL_ENABLE_GLOBAL_MODEL_DOWNLINK = True
+FL_DATA_PARTITION_MODE = "non_iid"
+FL_MODEL_UPDATE_KIND = "full_state_dict"
+FL_CHUNK_PAYLOAD_BYTE = 8192
+FL_PRIMARY_CLASSES_PER_USER = 2
+FL_NON_IID_DOMINANT_FRACTION = 0.8
+FL_PARTITION_WITH_REPLACEMENT = True
+FL_PARTITION_CACHE_FILE = "../cases/case2/experiment/data/fl_user_partitions.json"
+FL_CLEAR_DEFAULT_USER_TRAFFIC = True
+FL_ROUND_TIMEOUT_SECONDS = 80
+FL_MIN_UPDATES_PER_ROUND = 4
+FL_COMMUNICATION_LOG_INTERVAL = 1
+
+
+# Output files
+SAVE_FILE_PATH = f"../cases/case2/experiment/output/{OUTPUT_PREFIX}.csv"
+LEARNING_METRICS_FILE_PATH = f"../cases/case2/experiment/output/{OUTPUT_PREFIX}_learning_metrics.csv"
+COMMUNICATION_EVENTS_FILE_PATH = f"../cases/case2/experiment/output/{OUTPUT_PREFIX}_communication_events.csv"
+SUMMARY_METRICS_FILE_PATH = "../cases/case2/experiment/output/case2_summary_metrics.csv"
+
+
+# Fixed computed parameters
+TOTAL_SATELLITE_NUMBER = ORBIT_NUMBER * SATELLITE_NUMBER_PRE_ORBIT
+# COVER_RADIUS = np.tan(np.radians(SATELLITE_CONE_ANGLE / 2)) * ORBIT_HEIGHT
+
+
+POPULATION_PATH = "../resource/population_matrix.npy"
+CASE_RUNNING_TIME_REAL_SECONDS = CASE_SIMULATION_END_TIME
+
+
+
+
+# Satellite visibility parameters
+EARTH_RADIUS_KM = 6371.0
+
+# Minimum elevation angle of a ground terminal.
+# FCC 21-48 authorizes Starlink user terminals and gateways
+# to operate at elevation angles as low as 25 degrees.
+MIN_ELEVATION_ANGLE_DEG = 25.0
+# ============================================================
+# Fixed computed parameters
+# ============================================================
+
+TOTAL_SATELLITE_NUMBER = (
+    ORBIT_NUMBER * SATELLITE_NUMBER_PRE_ORBIT
+)
+
+# Convert the minimum ground elevation angle to radians.
+MIN_ELEVATION_ANGLE_RAD = np.radians(
+    MIN_ELEVATION_ANGLE_DEG
+)
+
+# Earth-centered angular distance from the satellite subpoint
+# to the boundary of the ground coverage area.
+COVERAGE_CENTRAL_ANGLE_RAD = (
+    np.arccos(
+        (
+            EARTH_RADIUS_KM
+            / (EARTH_RADIUS_KM + ORBIT_HEIGHT)
+        )
+        * np.cos(MIN_ELEVATION_ANGLE_RAD)
+    )
+    - MIN_ELEVATION_ANGLE_RAD
+)
+
+# Great-circle distance from the satellite subpoint
+# to the coverage boundary, in kilometers.
+COVER_RADIUS = (
+    EARTH_RADIUS_KM
+    * COVERAGE_CENTRAL_ANGLE_RAD
+)
+
+# Satellite-side half-cone angle measured from the nadir direction.
+SATELLITE_CONE_HALF_ANGLE_DEG = (
+    90.0
+    - MIN_ELEVATION_ANGLE_DEG
+    - np.degrees(COVERAGE_CENTRAL_ANGLE_RAD)
+)
+
+# Preserve the existing EasySatSim convention:
+# SATELLITE_CONE_ANGLE represents the complete cone angle.
+SATELLITE_CONE_ANGLE = (
+    2.0 * SATELLITE_CONE_HALF_ANGLE_DEG
+)

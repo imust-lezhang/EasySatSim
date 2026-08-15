@@ -1,0 +1,2 @@
+# Full Case 3 pipeline: simulation, paired-run processing, and plotting.
+-r ../../requirements-plotting.txt

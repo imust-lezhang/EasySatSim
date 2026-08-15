@@ -1,0 +1,9 @@
+# Core EasySatSim runtime dependencies.
+# Versions verified with Python 3.13 on Windows on 2026-08-13.
+numpy==2.3.5
+numba==0.65.0
+colorama==0.4.6
+Pillow==12.1.0
+PyQt5==5.15.11
+vispy==0.16.1
+pyqtgraph==0.14.0

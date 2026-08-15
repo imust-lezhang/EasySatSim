@@ -1,0 +1,28 @@
+{
+  "status": "DELIVERED",
+  "message_id": "ipv4-step8-0001",
+  "source_user_id": 0,
+  "destination_user_id": 1,
+  "source_access_satellite_id": 0,
+  "destination_access_satellite_id": 40,
+  "path_satellite_ids": [
+    0,
+    1,
+    13,
+    14,
+    26,
+    27,
+    39,
+    40
+  ],
+  "forwarding_count": 8,
+  "initial_ttl": 64,
+  "final_ttl": 56,
+  "source_ip": "153.103.217.229",
+  "destination_ip": "51.222.144.79",
+  "protocol": 17,
+  "source_port": 18080,
+  "destination_port": 18080,
+  "payload": "EASYSATSIM_STANDARD_IPV4_UDP_TEST",
+  "delay_ms": 115.44485774105091
+}

@@ -1,0 +1,226 @@
+{
+  "path_format": "project-relative-posix",
+  "batch_timestamp": "20260815_110602",
+  "seeds": [
+    20260811,
+    20260812,
+    20260813,
+    20260814,
+    20260815,
+    20260816,
+    20260817,
+    20260818,
+    20260819,
+    20260820
+  ],
+  "routing_modes": [
+    "centralized",
+    "distributed"
+  ],
+  "planned_run_count": 20,
+  "completed_run_count": 20,
+  "status": "complete",
+  "runs": [
+    {
+      "index": 1,
+      "routing_mode": "centralized",
+      "seed": 20260811,
+      "started_at": "2026-08-15T11:06:02",
+      "finished_at": "2026-08-15T11:09:24",
+      "metadata_path": "cases/case3/experiment/output/case3_run_metadata_centralized_seed_20260811_20260815_110602.json",
+      "event_log_path": "cases/case3/experiment/output/case3_events_centralized_seed_20260811_20260815_110602.csv",
+      "network_log_path": "cases/case3/experiment/output/easysatsim_result_centralized_seed_20260811_20260815_110602.csv"
+    },
+    {
+      "index": 2,
+      "routing_mode": "distributed",
+      "seed": 20260811,
+      "started_at": "2026-08-15T11:09:24",
+      "finished_at": "2026-08-15T11:12:46",
+      "metadata_path": "cases/case3/experiment/output/case3_run_metadata_distributed_seed_20260811_20260815_110924.json",
+      "event_log_path": "cases/case3/experiment/output/case3_events_distributed_seed_20260811_20260815_110924.csv",
+      "network_log_path": "cases/case3/experiment/output/easysatsim_result_distributed_seed_20260811_20260815_110924.csv"
+    },
+    {
+      "index": 3,
+      "routing_mode": "centralized",
+      "seed": 20260812,
+      "started_at": "2026-08-15T11:12:46",
+      "finished_at": "2026-08-15T11:16:08",
+      "metadata_path": "cases/case3/experiment/output/case3_run_metadata_centralized_seed_20260812_20260815_111246.json",
+      "event_log_path": "cases/case3/experiment/output/case3_events_centralized_seed_20260812_20260815_111246.csv",
+      "network_log_path": "cases/case3/experiment/output/easysatsim_result_centralized_seed_20260812_20260815_111246.csv"
+    },
+    {
+      "index": 4,
+      "routing_mode": "distributed",
+      "seed": 20260812,
+      "started_at": "2026-08-15T11:16:08",
+      "finished_at": "2026-08-15T11:19:30",
+      "metadata_path": "cases/case3/experiment/output/case3_run_metadata_distributed_seed_20260812_20260815_111608.json",
+      "event_log_path": "cases/case3/experiment/output/case3_events_distributed_seed_20260812_20260815_111608.csv",
+      "network_log_path": "cases/case3/experiment/output/easysatsim_result_distributed_seed_20260812_20260815_111608.csv"
+    },
+    {
+      "index": 5,
+      "routing_mode": "centralized",
+      "seed": 20260813,
+      "started_at": "2026-08-15T11:19:30",
+      "finished_at": "2026-08-15T11:22:52",
+      "metadata_path": "cases/case3/experiment/output/case3_run_metadata_centralized_seed_20260813_20260815_111930.json",
+      "event_log_path": "cases/case3/experiment/output/case3_events_centralized_seed_20260813_20260815_111930.csv",
+      "network_log_path": "cases/case3/experiment/output/easysatsim_result_centralized_seed_20260813_20260815_111930.csv"
+    },
+    {
+      "index": 6,
+      "routing_mode": "distributed",
+      "seed": 20260813,
+      "started_at": "2026-08-15T11:22:52",
+      "finished_at": "2026-08-15T11:26:14",
+      "metadata_path": "cases/case3/experiment/output/case3_run_metadata_distributed_seed_20260813_20260815_112252.json",
+      "event_log_path": "cases/case3/experiment/output/case3_events_distributed_seed_20260813_20260815_112252.csv",
+      "network_log_path": "cases/case3/experiment/output/easysatsim_result_distributed_seed_20260813_20260815_112252.csv"
+    },
+    {
+      "index": 7,
+      "routing_mode": "centralized",
+      "seed": 20260814,
+      "started_at": "2026-08-15T11:26:14",
+      "finished_at": "2026-08-15T11:29:36",
+      "metadata_path": "cases/case3/experiment/output/case3_run_metadata_centralized_seed_20260814_20260815_112614.json",
+      "event_log_path": "cases/case3/experiment/output/case3_events_centralized_seed_20260814_20260815_112614.csv",
+      "network_log_path": "cases/case3/experiment/output/easysatsim_result_centralized_seed_20260814_20260815_112614.csv"
+    },
+    {
+      "index": 8,
+      "routing_mode": "distributed",
+      "seed": 20260814,
+      "started_at": "2026-08-15T11:29:36",
+      "finished_at": "2026-08-15T11:32:58",
+      "metadata_path": "cases/case3/experiment/output/case3_run_metadata_distributed_seed_20260814_20260815_112936.json",
+      "event_log_path": "cases/case3/experiment/output/case3_events_distributed_seed_20260814_20260815_112936.csv",
+      "network_log_path": "cases/case3/experiment/output/easysatsim_result_distributed_seed_20260814_20260815_112936.csv"
+    },
+    {
+      "index": 9,
+      "routing_mode": "centralized",
+      "seed": 20260815,
+      "started_at": "2026-08-15T11:32:58",
+      "finished_at": "2026-08-15T11:36:20",
+      "metadata_path": "cases/case3/experiment/output/case3_run_metadata_centralized_seed_20260815_20260815_113259.json",
+      "event_log_path": "cases/case3/experiment/output/case3_events_centralized_seed_20260815_20260815_113259.csv",
+      "network_log_path": "cases/case3/experiment/output/easysatsim_result_centralized_seed_20260815_20260815_113259.csv"
+    },
+    {
+      "index": 10,
+      "routing_mode": "distributed",
+      "seed": 20260815,
+      "started_at": "2026-08-15T11:36:20",
+      "finished_at": "2026-08-15T11:39:42",
+      "metadata_path": "cases/case3/experiment/output/case3_run_metadata_distributed_seed_20260815_20260815_113621.json",
+      "event_log_path": "cases/case3/experiment/output/case3_events_distributed_seed_20260815_20260815_113621.csv",
+      "network_log_path": "cases/case3/experiment/output/easysatsim_result_distributed_seed_20260815_20260815_113621.csv"
+    },
+    {
+      "index": 11,
+      "routing_mode": "centralized",
+      "seed": 20260816,
+      "started_at": "2026-08-15T11:39:42",
+      "finished_at": "2026-08-15T11:43:05",
+      "metadata_path": "cases/case3/experiment/output/case3_run_metadata_centralized_seed_20260816_20260815_113943.json",
+      "event_log_path": "cases/case3/experiment/output/case3_events_centralized_seed_20260816_20260815_113943.csv",
+      "network_log_path": "cases/case3/experiment/output/easysatsim_result_centralized_seed_20260816_20260815_113943.csv"
+    },
+    {
+      "index": 12,
+      "routing_mode": "distributed",
+      "seed": 20260816,
+      "started_at": "2026-08-15T11:43:05",
+      "finished_at": "2026-08-15T11:46:27",
+      "metadata_path": "cases/case3/experiment/output/case3_run_metadata_distributed_seed_20260816_20260815_114305.json",
+      "event_log_path": "cases/case3/experiment/output/case3_events_distributed_seed_20260816_20260815_114305.csv",
+      "network_log_path": "cases/case3/experiment/output/easysatsim_result_distributed_seed_20260816_20260815_114305.csv"
+    },
+    {
+      "index": 13,
+      "routing_mode": "centralized",
+      "seed": 20260817,
+      "started_at": "2026-08-15T11:46:27",
+      "finished_at": "2026-08-15T11:49:49",
+      "metadata_path": "cases/case3/experiment/output/case3_run_metadata_centralized_seed_20260817_20260815_114627.json",
+      "event_log_path": "cases/case3/experiment/output/case3_events_centralized_seed_20260817_20260815_114627.csv",
+      "network_log_path": "cases/case3/experiment/output/easysatsim_result_centralized_seed_20260817_20260815_114627.csv"
+    },
+    {
+      "index": 14,
+      "routing_mode": "distributed",
+      "seed": 20260817,
+      "started_at": "2026-08-15T11:49:49",
+      "finished_at": "2026-08-15T11:53:11",
+      "metadata_path": "cases/case3/experiment/output/case3_run_metadata_distributed_seed_20260817_20260815_114949.json",
+      "event_log_path": "cases/case3/experiment/output/case3_events_distributed_seed_20260817_20260815_114949.csv",
+      "network_log_path": "cases/case3/experiment/output/easysatsim_result_distributed_seed_20260817_20260815_114949.csv"
+    },
+    {
+      "index": 15,
+      "routing_mode": "centralized",
+      "seed": 20260818,
+      "started_at": "2026-08-15T11:53:11",
+      "finished_at": "2026-08-15T11:56:33",
+      "metadata_path": "cases/case3/experiment/output/case3_run_metadata_centralized_seed_20260818_20260815_115311.json",
+      "event_log_path": "cases/case3/experiment/output/case3_events_centralized_seed_20260818_20260815_115311.csv",
+      "network_log_path": "cases/case3/experiment/output/easysatsim_result_centralized_seed_20260818_20260815_115311.csv"
+    },
+    {
+      "index": 16,
+      "routing_mode": "distributed",
+      "seed": 20260818,
+      "started_at": "2026-08-15T11:56:33",
+      "finished_at": "2026-08-15T11:59:55",
+      "metadata_path": "cases/case3/experiment/output/case3_run_metadata_distributed_seed_20260818_20260815_115633.json",
+      "event_log_path": "cases/case3/experiment/output/case3_events_distributed_seed_20260818_20260815_115633.csv",
+      "network_log_path": "cases/case3/experiment/output/easysatsim_result_distributed_seed_20260818_20260815_115633.csv"
+    },
+    {
+      "index": 17,
+      "routing_mode": "centralized",
+      "seed": 20260819,
+      "started_at": "2026-08-15T11:59:55",
+      "finished_at": "2026-08-15T12:03:17",
+      "metadata_path": "cases/case3/experiment/output/case3_run_metadata_centralized_seed_20260819_20260815_115955.json",
+      "event_log_path": "cases/case3/experiment/output/case3_events_centralized_seed_20260819_20260815_115955.csv",
+      "network_log_path": "cases/case3/experiment/output/easysatsim_result_centralized_seed_20260819_20260815_115955.csv"
+    },
+    {
+      "index": 18,
+      "routing_mode": "distributed",
+      "seed": 20260819,
+      "started_at": "2026-08-15T12:03:17",
+      "finished_at": "2026-08-15T12:06:39",
+      "metadata_path": "cases/case3/experiment/output/case3_run_metadata_distributed_seed_20260819_20260815_120317.json",
+      "event_log_path": "cases/case3/experiment/output/case3_events_distributed_seed_20260819_20260815_120317.csv",
+      "network_log_path": "cases/case3/experiment/output/easysatsim_result_distributed_seed_20260819_20260815_120317.csv"
+    },
+    {
+      "index": 19,
+      "routing_mode": "centralized",
+      "seed": 20260820,
+      "started_at": "2026-08-15T12:06:39",
+      "finished_at": "2026-08-15T12:10:01",
+      "metadata_path": "cases/case3/experiment/output/case3_run_metadata_centralized_seed_20260820_20260815_120639.json",
+      "event_log_path": "cases/case3/experiment/output/case3_events_centralized_seed_20260820_20260815_120639.csv",
+      "network_log_path": "cases/case3/experiment/output/easysatsim_result_centralized_seed_20260820_20260815_120639.csv"
+    },
+    {
+      "index": 20,
+      "routing_mode": "distributed",
+      "seed": 20260820,
+      "started_at": "2026-08-15T12:10:01",
+      "finished_at": "2026-08-15T12:13:23",
+      "metadata_path": "cases/case3/experiment/output/case3_run_metadata_distributed_seed_20260820_20260815_121001.json",
+      "event_log_path": "cases/case3/experiment/output/case3_events_distributed_seed_20260820_20260815_121001.csv",
+      "network_log_path": "cases/case3/experiment/output/easysatsim_result_distributed_seed_20260820_20260815_121001.csv"
+    }
+  ],
+  "finished_at": "2026-08-15T12:13:23"
+}

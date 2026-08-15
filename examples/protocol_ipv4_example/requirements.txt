@@ -1,0 +1,2 @@
+scapy==2.7.0
+matplotlib==3.10.8
