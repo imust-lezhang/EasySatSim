@@ -221,6 +221,16 @@ python cases/case3/run_experiment.py --seed-count 10
 
 This command runs both routing modes for each random seed. Evaluation and plotting are separate steps. See the Case 3 tutorial for the complete workflow.
 
+## Test Mode Example
+
+`examples/test_mode_example` is a self-contained two-user functional demonstration using a dedicated Starlink Phase I-A configuration. It opens the live visualization without modifying the main simulator configuration and writes its results inside the example directory.
+
+```powershell
+python -m examples.test_mode_example.main
+```
+
+See the [test mode example guide](examples/test_mode_example/README.md) for its fixed user locations, configuration scope, and output location.
+
 ## Routing Extension Example
 
 `examples/routing_example` provides a compact illustration of the custom routing callback interface and its registration method. It is an interface reference rather than a standalone experiment; see the [routing extension example](examples/routing_example/README.md) for the minimal explanation and Case 3 for the complete reproducible routing scenario.

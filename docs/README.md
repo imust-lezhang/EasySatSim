@@ -19,5 +19,6 @@ Case tutorials:
 - [Case 1 tutorial](../cases/case1/TUTORIAL.md)
 - [Case 2 tutorial](../cases/case2/TUTORIAL.md)
 - [Case 3 tutorial](../cases/case3/TUTORIAL.md)
+- [Test mode example](../examples/test_mode_example/README.md)
 - [Routing extension example](../examples/routing_example/README.md)
 - [IPv4/UDP example tutorial](../examples/protocol_ipv4_example/TUTORIAL.md)

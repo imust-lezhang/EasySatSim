@@ -17,3 +17,6 @@ keywords:
   - low Earth orbit
   - protocol stack
   - routing
+version: 1.0.0
+date-released: 2026-08-15
+repository-code: https://github.com/imust-lezhang/EasySatSim

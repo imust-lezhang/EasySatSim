@@ -1524,7 +1524,12 @@ class SimulationControlWindow(QMainWindow):
         is_initial = state == self.STATE_INITIAL
         is_running = state == self.STATE_RUNNING
         is_stopped = state == self.STATE_STOPPED
-        can_configure = is_initial and not self.runtime.use_external_scene_controller
+        is_test_mode = bool(self.runtime.scene_options.get("test_mode"))
+        can_configure = (
+            is_initial
+            and not self.runtime.use_external_scene_controller
+            and not is_test_mode
+        )
         self.start_action.setEnabled(is_initial)
         self.stop_action.setEnabled(is_running)
         self.configure_action.setEnabled(can_configure)
@@ -1564,7 +1569,11 @@ class SimulationControlWindow(QMainWindow):
             self.config_store.reload_module()
             self.runtime.set_config_root(self.config_store.config_root)
             self._log_event("Configuration loaded.")
-            output_path = self.config_store.assign_auto_save_file_path()
+            if getattr(cg, "AUTO_ASSIGN_SAVE_FILE_PATH", True):
+                output_path = self.config_store.assign_auto_save_file_path()
+            else:
+                output_path = self.config_store.resolve_config_path(cg.SAVE_FILE_PATH)
+                output_path.parent.mkdir(parents=True, exist_ok=True)
             self._log_event(f"Run result file assigned: {output_path}")
             self._refresh_pre_run_overview()
             self._update_status_bar()

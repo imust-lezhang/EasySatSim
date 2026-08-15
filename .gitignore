@@ -25,6 +25,9 @@ dist/
 /output/*
 !/output/README.md
 
+# Generated output from the self-contained test-mode example.
+/examples/test_mode_example/output/
+
 # Generated test reports, screenshots, and short-run results.
 /tests/artifacts/*
 !/tests/artifacts/.gitkeep
