@@ -157,6 +157,21 @@ Under this hardware configuration, traffic load, and runtime criterion:
 
 Therefore, the result reported in the paper only shows that, under the specified hardware, traffic load, and runtime conditions, the 10,000 satellite configuration satisfies the continuous reception requirement. It should not be interpreted as a general scale limit independent of hardware, traffic, or protocol configuration.
 
+## Estimate Capacity on Your Computer
+
+EasySatSim provides an optional local capacity scan that tests progressively larger constellations using isolated generated configurations.
+
+Install the additional monitoring dependency and start the scan from the repository root:
+
+```powershell
+python -m pip install -r tests/capacity_scan/requirements-capacity.txt
+python tests/capacity_scan/run_capacity_scan.py
+```
+
+The generated `capacity_report.md` reports both the recommended satellite count under the configured performance requirements and the maximum satellite count that completed the tested workflow. These values apply only to the recorded hardware, workload, configuration, and tested scales.
+
+See the [local capacity scan guide](tests/capacity_scan/README.md) for the test definition and result interpretation.
+
 ## Documentation
 
 The [documentation index](docs/README.md) provides the following guides:

@@ -17,6 +17,12 @@ STYLES = {
     "centralized": ("Centralized Routing", "o"),
     "distributed": ("Distributed Routing", "v"),
 }
+FIGURE_SIZE = (7.2, 4.8)
+AXIS_LABEL_SIZE = 16.0
+TICK_LABEL_SIZE = 13.5
+LEGEND_FONT_SIZE = 12.5
+PHASE_LABEL_SIZE = 10.5
+EVENT_LABEL_SIZE = 11.0
 
 
 def load_plot_inputs():
@@ -71,11 +77,11 @@ def draw_timeline(axis, metadata):
                 zorder=8,
             )
     failed_satellite_id = int(metadata["failed_satellite_id"])
-    phase_labels = [
+    phase_labels = (
         (0.0, failure, "Normal Operation"),
         (failure, refresh, "Failure Before\nRefresh"),
         (refresh, duration, "Failure After\nRefresh"),
-    ]
+    )
     for start, end, label in phase_labels:
         if end <= start:
             continue
@@ -86,36 +92,45 @@ def draw_timeline(axis, metadata):
             label_x += min(5.0, (end - start) * 0.1)
         axis.text(
             label_x,
-            0.99,
+            0.985,
             label,
             transform=axis.get_xaxis_transform(),
             color="black",
             fontweight="bold",
-            fontsize=8,
+            fontsize=PHASE_LABEL_SIZE,
             ha="center",
             va="top",
-            linespacing=1.05,
+            linespacing=1.0,
             zorder=12,
         )
-    event_labels = [
-        (failure, f"Satellite {failed_satellite_id} Failure ({failure:g} s)"),
-        (refresh, f"Centralized Route Refresh ({refresh:g} s)"),
-    ]
-    for event_time, label in event_labels:
+    event_labels = (
+        (
+            failure,
+            -8.0,
+            f"Satellite {failed_satellite_id}\nFailure ({failure:g} s)",
+        ),
+        (
+            refresh,
+            8.0,
+            f"Centralized Route\nRefresh ({refresh:g} s)",
+        ),
+    )
+    for event_time, label_offset, label in event_labels:
         if not 0.0 < event_time < duration:
             continue
         axis.text(
-            event_time - 2.0,
-            0.04,
+            event_time + label_offset,
+            0.28,
             label,
             transform=axis.get_xaxis_transform(),
             color="#666666",
-            fontsize=6.5,
+            fontsize=EVENT_LABEL_SIZE,
             fontweight="normal",
             rotation=90,
             rotation_mode="anchor",
             ha="left",
-            va="bottom",
+            va="center",
+            linespacing=0.9,
             zorder=12,
         )
     axis.set_xlim(0.0, duration)
@@ -144,9 +159,9 @@ def draw_series(axis, frame, metric, lower_bound=None, upper_bound=None):
             color=COLORS[mode],
             marker=marker,
             markerfacecolor="white",
-            markeredgewidth=0.5,
-            markersize=3.0,
-            linewidth=0.9,
+            markeredgewidth=0.7,
+            markersize=3.8,
+            linewidth=1.2,
             label=label,
             zorder=10,
         )
@@ -155,7 +170,19 @@ def draw_series(axis, frame, metric, lower_bound=None, upper_bound=None):
 def finish_axis(axis):
     axis.yaxis.grid(True, which="major", color="gray", linewidth=0.5, alpha=0.7)
     axis.yaxis.grid(True, which="minor", color="gray", linestyle=":", linewidth=0.5, alpha=0.7)
-    legend = axis.legend(frameon=True, edgecolor="black", labelspacing=0.1, loc="best")
+    legend = axis.legend(
+        frameon=True,
+        edgecolor="black",
+        labelspacing=0.15,
+        loc="lower left",
+        bbox_to_anchor=(0.0, 0.06),
+        fontsize=LEGEND_FONT_SIZE,
+    )
     legend.get_frame().set_alpha(None)
-    axis.set_xlabel("Time (seconds)")
-    axis.tick_params(axis="both", which="both", direction="out")
+    axis.set_xlabel("Time (seconds)", fontsize=AXIS_LABEL_SIZE)
+    axis.tick_params(
+        axis="both",
+        which="both",
+        direction="out",
+        labelsize=TICK_LABEL_SIZE,
+    )

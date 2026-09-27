@@ -5,7 +5,10 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 from cases.case3.plotting._common import (
+    AXIS_LABEL_SIZE,
     FIGURE_DIR,
+    FIGURE_SIZE,
+    TICK_LABEL_SIZE,
     draw_series,
     draw_timeline,
     finish_axis,
@@ -18,7 +21,7 @@ FIGURE_PATH = FIGURE_DIR / "CASE3_AVERAGE_HOP_COUNT.png"
 
 
 def plot_average_hop_count(frame, metadata, path=FIGURE_PATH):
-    fig, axis = plt.subplots(figsize=(6, 5))
+    fig, axis = plt.subplots(figsize=FIGURE_SIZE)
     draw_timeline(axis, metadata)
     draw_series(axis, frame, "average_hop_count", lower_bound=0.0)
     y_min = 4
@@ -28,10 +31,16 @@ def plot_average_hop_count(frame, metadata, path=FIGURE_PATH):
     odd_ticks = np.arange(y_min + 1, y_max + 1, 2)
     axis.set_yticks(even_ticks)
     axis.set_yticks(odd_ticks, minor=True)
-    axis.set_yticklabels([str(value) for value in even_ticks])
-    axis.set_yticklabels([str(value) for value in odd_ticks], minor=True)
-    axis.tick_params(axis="y", which="minor", labelsize=10)
-    axis.set_ylabel("Average Hop Count")
+    axis.set_yticklabels(
+        [str(value) for value in even_ticks],
+        fontsize=TICK_LABEL_SIZE,
+    )
+    axis.set_yticklabels(
+        [str(value) for value in odd_ticks],
+        minor=True,
+        fontsize=TICK_LABEL_SIZE,
+    )
+    axis.set_ylabel("Average Hop Count", fontsize=AXIS_LABEL_SIZE)
     finish_axis(axis)
     path.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(path, bbox_inches="tight", dpi=400)

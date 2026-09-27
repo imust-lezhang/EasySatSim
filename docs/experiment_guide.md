@@ -178,6 +178,20 @@ For learning architecture switching, dependency installation, data preparation, 
 
 `cases/case2/TUTORIAL.md`
 
+## 9. Estimate Local Capacity Before a Large Experiment
+
+Before running a large constellation or repeated batch experiment on a new computer, you can use the optional local capacity scan:
+
+```powershell
+python tests/capacity_scan/run_capacity_scan.py
+```
+
+The recommended satellite count is the largest continuous tested scale that satisfies the configured simulation-speed, delivery-ratio, and workload-retention requirements. The maximum supported satellite count is the largest tested scale that completed all planned workflows.
+
+Use the recommended count as a conservative reference when selecting an initial experimental scale.
+
+See [Local Capacity Scan](../tests/capacity_scan/README.md) for details.
+
 ## 10. Before Using Results in a Paper
 
 Before using experimental results to generate figures or numerical values for a paper, confirm that:

@@ -7,7 +7,10 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 from cases.case3.plotting._common import (
+    AXIS_LABEL_SIZE,
     FIGURE_DIR,
+    FIGURE_SIZE,
+    TICK_LABEL_SIZE,
     draw_series,
     draw_timeline,
     finish_axis,
@@ -23,7 +26,7 @@ def plot_undelivered_ratio(frame, metadata, path=FIGURE_PATH):
     plot_frame = frame.copy()
     plot_frame["undelivered_ratio"] = 1.0 - plot_frame["delivery_ratio"]
 
-    fig, axis = plt.subplots(figsize=(6, 5))
+    fig, axis = plt.subplots(figsize=FIGURE_SIZE)
     draw_timeline(axis, metadata)
     draw_series(
         axis,
@@ -34,10 +37,13 @@ def plot_undelivered_ratio(frame, metadata, path=FIGURE_PATH):
     )
     y_max = _rounded_percentage_ceiling(plot_frame)
     axis.set_ylim(0.0, y_max)
-    axis.set_ylabel("Undelivered Ratio")
+    axis.set_ylabel("Undelivered Ratio", fontsize=AXIS_LABEL_SIZE)
     major_ticks = np.arange(0.0, y_max + 0.001, 0.1)
     axis.set_yticks(major_ticks)
-    axis.set_yticklabels([f"{value * 100:.0f}%" for value in major_ticks])
+    axis.set_yticklabels(
+        [f"{value * 100:.0f}%" for value in major_ticks],
+        fontsize=TICK_LABEL_SIZE,
+    )
     axis.set_yticks(np.arange(0.0, y_max + 0.001, 0.02), minor=True)
     finish_axis(axis)
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -52,7 +58,10 @@ def _rounded_percentage_ceiling(frame):
     )
     if not np.isfinite(maximum_mean):
         raise ValueError("No finite undelivered-ratio values are available to plot.")
-    return max(0.1, math.ceil(maximum_mean * 10.0 - 1e-12) / 10.0)
+    return min(
+        1.0,
+        max(0.1, math.ceil(maximum_mean * 10.0 - 1e-12) / 10.0 + 0.1),
+    )
 
 
 def main():

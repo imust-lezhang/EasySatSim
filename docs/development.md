@@ -9,7 +9,7 @@ src/             reusable simulation mechanisms
 configuration/   main simulator configuration and presets
 cases/           complete research scenarios and paper experiment workflows
 examples/        focused API or protocol examples
-tests/           automated tests
+tests/           automated tests and optional environment or capacity diagnostics
 resource/        runtime maps, population data, and image resources
 docs/            user and developer documentation
 output/          main simulator runtime results

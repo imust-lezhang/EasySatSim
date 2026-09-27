@@ -119,6 +119,21 @@ python -m unittest -v tests.integration.test_integrations
 
 Test dependencies are defined in `tests/requirements-test.txt`. The current test suite itself uses `unittest`. `pytest` and `pytest-timeout` are also included in the test dependencies for later test development and CI extension.
 
+## Optional Local Capacity Scan
+
+The local capacity scan is not part of `run_all.py` and is not executed during the normal diagnostic or regression test process. It is an optional hardware capacity assessment that may consume substantial time and memory.
+
+Install its dependency and run it from the repository root:
+
+```powershell
+python -m pip install -r tests/capacity_scan/requirements-capacity.txt
+python tests/capacity_scan/run_capacity_scan.py
+```
+
+Open the generated `capacity_report.md` to read the recommended satellite count and maximum supported satellite count among the tested scales.
+
+See [Local Capacity Scan](capacity_scan/README.md) for details.
+
 ## Generated Diagnostic Artifacts
 
 Each complete run generates timestamped reports:

@@ -179,6 +179,18 @@ For paper experiments that require repeated execution, we recommend using the do
 
 Unless the change itself is part of the experiment definition, do not increase the simulation time step or disable the physical layer merely to accelerate a final experiment.
 
+## The Local Capacity Scan Stops or Reports a Low Recommendation
+
+The capacity scan intentionally stops when system memory reaches its safety limit, available memory becomes too low, or a worker fails. A safety stop protects the current computer and does not by itself indicate an EasySatSim defect.
+
+Close unrelated memory-intensive applications and avoid running another EasySatSim instance during the scan. Do not raise the memory safety limits merely to obtain a larger result.
+
+The recommended satellite count and maximum supported satellite count measure different conditions. The maximum supported count may be higher because a workflow can complete without satisfying the configured simulation-speed, delivery-ratio, or workload-retention requirements.
+
+Open the generated `capacity_report.md` first. For additional diagnosis, inspect `capacity_runs.csv` and the corresponding `worker.log`.
+
+If the program reports that another capacity scan is active, check whether the recorded Python process is still running. A stale lock from a terminated process is removed automatically on the next invocation.
+
 ## Case 2 Cannot Download or Load CIFAR-10
 
 First install:

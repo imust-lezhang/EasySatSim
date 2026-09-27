@@ -78,6 +78,19 @@ python tests/run_all.py --mode offscreen
 
 In this mode, the expected result for Step 6 is `SKIP`, so this mode cannot verify whether desktop OpenGL works correctly.
 
+### Optional Local Capacity Assessment
+
+After `tests/run_all.py` passes, you can optionally estimate a suitable constellation scale for the current computer:
+
+```powershell
+python -m pip install -r tests/capacity_scan/requirements-capacity.txt
+python tests/capacity_scan/run_capacity_scan.py
+```
+
+This scan is more resource intensive than the installation diagnostics and is not required before the first normal run. Read the generated `capacity_report.md` before selecting a scale for a long experiment.
+
+For the test definition and output interpretation, see [Local Capacity Scan](../tests/capacity_scan/README.md).
+
 ## 3. Run the Default Simulation
 
 The default Starlink Phase I-A configuration is a complete simulation scenario with 32 orbital planes, 50 satellites per plane, 1,600 satellites in total, and 500 users. This configuration is mainly intended to demonstrate the complete EasySatSim runtime process.

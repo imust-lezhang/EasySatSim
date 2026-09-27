@@ -14,6 +14,11 @@ focused examples also contain local tutorials for their exact workflows.
 | [Troubleshooting](troubleshooting.md) | Common configuration, runtime, export, protocol, and case errors. |
 | [Development Guide](development.md) | Extension interfaces, directory responsibilities, testing, and release checks. |
 
+Testing and local diagnostics:
+
+- [Installation and visualization diagnostics](../tests/README.md)
+- [Local capacity scan](../tests/capacity_scan/README.md)
+
 Case tutorials:
 
 - [Case 1 tutorial](../cases/case1/TUTORIAL.md)

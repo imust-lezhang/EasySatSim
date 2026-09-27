@@ -1,0 +1,3 @@
+/.capacity_scan.lock
+/output/*
+!/output/.gitkeep
