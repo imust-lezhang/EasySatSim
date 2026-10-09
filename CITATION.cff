@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: >-
-  If you use EasySatSim in your research, please cite this software. The related paper is currently under review.
-  The citation information will be updated after the paper is formally published.
+  If you use EasySatSim in your research, please cite the associated
+  paper published in IEEE Transactions on Network and Service Management.
 title: EasySatSim
 type: software
 authors:
@@ -20,3 +20,25 @@ keywords:
 version: 1.0.0
 date-released: 2026-08-15
 repository-code: https://github.com/imust-lezhang/EasySatSim
+
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Zhang
+      given-names: Le
+    - family-names: Gu
+      given-names: Yu
+    - family-names: Du
+      given-names: Ye
+    - family-names: Liu
+      given-names: Xin
+    - family-names: Zhang
+      given-names: Jikai
+    - family-names: Guo
+      given-names: Junyan
+  title: >-
+    EasySatSim: Enabling Researchers to Build Scalable LEO Satellite Network Experimental Environments on Personal Computing Devices
+  journal: IEEE Transactions on Network and Service Management
+  year: 2026
+  doi: 10.1109/TNSM.2026.3739052
+  url: https://doi.org/10.1109/TNSM.2026.3739052

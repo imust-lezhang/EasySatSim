@@ -278,7 +278,55 @@ Lightweight checks, installation diagnostics, and short tests are intended to co
 
 ## Citation
 
-If you use EasySatSim in academic work, please cite the associated paper and software release. Current citation guidance is provided in [`CITATION.cff`](CITATION.cff). The formal paper citation and final release metadata will be updated after publication.
+If you use EasySatSim in your research, please cite our paper:
+
+**Le Zhang, Yu Gu, Ye Du, Xin Liu, Jikai Zhang, and Junyan Guo**,<br>
+"EasySatSim: Enabling Researchers to Build Scalable LEO Satellite Network Experimental Environments on Personal Computing Devices,"<br>
+*IEEE Transactions on Network and Service Management*, Early Access, 2026.<br>
+DOI: [10.1109/TNSM.2026.3739052](https://doi.org/10.1109/TNSM.2026.3739052)
+
+### BibTeX
+
+```bibtex
+@article{Zhang2026EasySatSim,
+  author  = {Le Zhang and Yu Gu and Ye Du and Xin Liu and Jikai Zhang and Junyan Guo},
+  title   = {EasySatSim: Enabling Researchers to Build Scalable LEO Satellite Network Experimental Environments on Personal Computing Devices},
+  journal = {IEEE Transactions on Network and Service Management},
+  year    = {2026},
+  doi     = {10.1109/TNSM.2026.3739052},
+  url     = {https://doi.org/10.1109/TNSM.2026.3739052}
+}
+```
+
+Citation metadata is also available in [`CITATION.cff`](CITATION.cff).
+
+## Related Publications
+
+If you are interested in our other research on satellite and UAV networks, network security, cascading failures, and resilience enhancement, we invite you to explore the following publications:
+
+1. **[A modeling and simulation framework for the study and analysis of cascading failures in satellite networks](https://doi.org/10.1016/j.ress.2026.112793)**<br>
+   *Reliability Engineering & System Safety*, 2026.
+
+2. **[SatFedGuard: Semi-Supervised Federated Contrastive Learning With RL-Assisted Bidirectional Distillation for Anomaly Traffic Detection in Satellite Networks](https://doi.org/10.1109/TNSM.2026.3685416)**<br>
+   *IEEE Transactions on Network and Service Management*, 2026.
+
+3. **[Rapid cascading risk assessment and vulnerable satellite identification schemes for LEO satellite networks](https://doi.org/10.1016/j.ress.2024.110699)**<br>
+   *Reliability Engineering & System Safety*, 2025.
+
+4. **[Distributed Anti-Cascading Routing Scheme Based on Fuzzy Logic in LEO Satellite Networks](https://doi.org/10.1109/TVT.2024.3470075)**<br>
+   *IEEE Transactions on Vehicular Technology*, 2025.
+
+5. **[Modeling and Analysis of Cascading Failures in LEO Satellite Networks](https://doi.org/10.1109/TNSE.2023.3308610)**<br>
+   *IEEE Transactions on Network Science and Engineering*, 2024.
+
+6. **[A Dynamic Cascading Failure Model for LEO Satellite Networks](https://doi.org/10.1109/TNSM.2023.3343357)**<br>
+   *IEEE Transactions on Network and Service Management*, 2024.
+
+7. **[UAV-Enabled IoT: Cascading Failure Model and Topology-Control-Based Recovery Scheme](https://doi.org/10.1109/JIOT.2024.3381735)**<br>
+   *IEEE Internet of Things Journal*, 2024.
+
+8. **[Cascading failure model and resilience enhancement scheme of space information networks](https://doi.org/10.1016/j.ress.2023.109379)**<br>
+   *Reliability Engineering & System Safety*, 2023.
 
 ## License
 
